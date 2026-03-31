@@ -28,10 +28,13 @@ def round_band(score):
 
 def calculate_overall(l, r, w, s):
     scores = [l, r, w, s]
-
-    for s in scores:
+    i = 0
+    while i < len(scores):  
+        s = scores[i]
+    
         if not validate_score(s):
-            return "Invalid input"
+           return "Invalid input"
+        i += 1
 
     avg = sum(scores) / 4
     return round_band(avg)
